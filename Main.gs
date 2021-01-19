@@ -1,15 +1,16 @@
 // When adding a new function, don't forget to update the reference tab!
 
-// Take a range and convert it into a column of concatenated rows
-function linearize(vals) {
-  var res = [];
-  for (var y=0; y < vals.length; y++) {
-    for (var x=0; x < vals[y].length; x++) {
-      res.push([vals[y][x]]);
-    }
+// Given a string, return a cell block with its letters along the diagonal
+function diagonalize(str) {
+  var res = []
+  var letters = str.split("")
+  for (var i=0; i < str.length; i++) {
+    var line = []
+    line[i] = letters[i]
+    res.push(line)
   }
 
-  return res;
+  return res
 }
 
 // Converts a string to capital letters without whitespace or punctuation, and uppercases.
@@ -118,6 +119,11 @@ function reverseString(str) {
     var reverseArray = splitString.reverse();
     var joinArray = reverseArray.join("");
     return joinArray;
+}
+
+// Split a string into individual letters
+function splitString(str) {
+  return [str.split("")];
 }
 
 // The unique characters of the given string.
